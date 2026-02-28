@@ -55,10 +55,65 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 15.5),
+              SizedBox(height: 25.5),
               CustomButton(
                 text: "Sign In",
                 borderRadius: BorderRadius.all(Radius.circular(50.0)),
+              ),
+              SizedBox(height: 40.0),
+              Row(
+                children: [
+                  Expanded(child: Divider(color: Color(0xFFDDDDDD))),
+                  SizedBox(width: 6),
+                  Text(
+                    "Or login with",
+                    style: TextStyle(color: Colors.grey[700]),
+                  ),
+                  SizedBox(width: 6),
+                  Expanded(child: Divider(color: Color(0xFFDDDDDD))),
+                ],
+              ),
+              SizedBox(height: 40.0),
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 20.0,
+                  horizontal: 20.0,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(color: const Color(0xFFDDDDDD)),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset("assets/google.png"),
+                    SizedBox(width: 10.0),
+                    Text(
+                      "Continue with Google",
+                      style: TextStyle(fontSize: 16.0, color: Colors.black),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 70),
+              Align(
+                alignment: Alignment.center,
+                child: RichText(
+                  text: TextSpan(
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                    children: [
+                      TextSpan(text: "Don’t have an account?"),
+                      TextSpan(
+                        text: " Register",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
