@@ -17,7 +17,7 @@ class _LandingScreenState extends State<LandingScreen> {
 
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => HomeScreen()),
       );
     });
     return Scaffold(

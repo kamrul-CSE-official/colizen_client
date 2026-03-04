@@ -1,15 +1,15 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/controllers/login_controller.dart';
+import 'package:flutter_application_1/sceens/signUpScreen.dart';
 import 'package:flutter_application_1/widgets/button.dart';
 import 'package:flutter_application_1/widgets/input.dart';
+import 'package:get/get.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  LoginScreen({super.key});
+  final controller = Get.put(LoginController());
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,6 +110,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           fontWeight: FontWeight.w600,
                           color: Colors.black,
                         ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Get.to(() => SignUpScreen());
+                          },
                       ),
                     ],
                   ),

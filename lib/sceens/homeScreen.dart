@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/controllers/home_controller.dart';
 import 'package:flutter_application_1/sceens/loginScreen.dart';
 import 'package:flutter_application_1/widgets/CurveClipper.dart';
 import 'package:flutter_application_1/widgets/button.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+  final controller = Get.put(HomeController());
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -113,12 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
               onTap: () {
                 if (_currentPage == 2) {
                   // শেষ পেজে থাকলে হোম পেজে নিয়ে যান
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const LoginScreen(),
-                    ),
-                  );
+                  Get.to(() => LoginScreen());
                 } else {
                   _pageController.nextPage(
                     duration: const Duration(milliseconds: 300),
