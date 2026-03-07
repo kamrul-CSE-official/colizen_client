@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/controllers/login_controller.dart';
+import 'package:flutter_application_1/features/navbar/sceens/navbar_sceen.dart';
 import 'package:flutter_application_1/sceens/signUpScreen.dart';
 import 'package:flutter_application_1/widgets/button.dart';
 import 'package:flutter_application_1/widgets/input.dart';
@@ -59,6 +60,9 @@ class LoginScreen extends StatelessWidget {
               CustomButton(
                 text: "Sign In",
                 borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                onTap: () {
+                  Get.to(() => NavBar());
+                },
               ),
               SizedBox(height: 40.0),
               Row(

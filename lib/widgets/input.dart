@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_application_1/widgets/colors.dart';
+import 'package:flutter_application_1/utils/consts/colors.dart';
 
 class CustomInputField extends StatelessWidget {
   const CustomInputField({
