@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/controllers/login_controller.dart';
-import 'package:flutter_application_1/features/navbar/sceens/navbar_sceen.dart';
-import 'package:flutter_application_1/sceens/signUpScreen.dart';
+import 'package:flutter_application_1/sceens/roleSelectionScreen.dart';
+import 'package:flutter_application_1/widgets/appDialog.dart';
 import 'package:flutter_application_1/widgets/button.dart';
 import 'package:flutter_application_1/widgets/input.dart';
 import 'package:get/get.dart';
@@ -61,7 +61,25 @@ class LoginScreen extends StatelessWidget {
                 text: "Sign In",
                 borderRadius: BorderRadius.all(Radius.circular(50.0)),
                 onTap: () {
-                  Get.to(() => NavBar());
+                  showDialog(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (_) => AppDialog(
+                      title: "Congratulations!",
+                      message: "You have successfully logged in.",
+                      showLoader: true,
+                      icon: const Icon(
+                        Icons.person,
+                        size: 40,
+                        color: Colors.black,
+                      ),
+                    ),
+                  );
+
+                  Future.delayed(const Duration(seconds: 4), () {
+                    Navigator.pop(context); // close dialog
+                    // Get.to(() => NavBar());
+                  });
                 },
               ),
               SizedBox(height: 40.0),
@@ -116,7 +134,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            Get.to(() => SignUpScreen());
+                            Get.to(() => RoleSelectionScreen());
                           },
                       ),
                     ],
