@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Deliveries App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
+      theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
       home: LandingScreen(),
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/controllers/login_controller.dart';
 import 'package:flutter_application_1/sceens/roleSelectionScreen.dart';
+import 'package:flutter_application_1/sceens/searchScreen.dart';
 import 'package:flutter_application_1/widgets/appDialog.dart';
 import 'package:flutter_application_1/widgets/button.dart';
 import 'package:flutter_application_1/widgets/input.dart';
@@ -79,6 +80,7 @@ class LoginScreen extends StatelessWidget {
                   Future.delayed(const Duration(seconds: 4), () {
                     Navigator.pop(context); // close dialog
                     // Get.to(() => NavBar());
+                    Get.to(() => SearchScreen());
                   });
                 },
               ),
